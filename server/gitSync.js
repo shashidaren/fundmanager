@@ -89,6 +89,11 @@ export function syncToGit(customMessage = '') {
   let pushed = false;
   let pushNote = '';
   try {
+    try {
+      runGit(['pull', '--rebase', 'origin', branch]);
+    } catch {
+      // Remote branch may not exist yet on first push; safe to ignore
+    }
     runGit(['push', '-u', 'origin', branch]);
     pushed = true;
     pushNote = `Synced cleanly to origin/${branch} (${commitHash})`;
@@ -103,6 +108,42 @@ export function syncToGit(customMessage = '') {
     commitHash,
     commitMessage: commitMsg,
     note: pushNote,
+    status: getGitStatusSummary()
+  };
+}
+
+export function pullFromGit() {
+  const branch = runGit(['rev-parse', '--abbrev-ref', 'HEAD']);
+  if (!branch || branch === 'HEAD') {
+    throw new Error('Detached HEAD state; refusing to pull.');
+  }
+
+  const dirty = runGit(['status', '--porcelain']);
+  let stashed = false;
+  if (dirty.length > 0) {
+    runGit(['stash', 'push', '-m', 'dashboard-pull-autostash']);
+    stashed = true;
+  }
+
+  try {
+    runGit(['pull', '--rebase', 'origin', branch]);
+  } finally {
+    if (stashed) {
+      try {
+        runGit(['stash', 'pop']);
+      } catch {
+        // Keep stash intact if conflict
+      }
+    }
+  }
+
+  writeHandoffFile();
+  const commitHash = runGit(['rev-parse', '--short', 'HEAD']);
+  return {
+    pulled: true,
+    branch,
+    commitHash,
+    note: `Pulled latest updates from origin/${branch} (${commitHash})`,
     status: getGitStatusSummary()
   };
 }

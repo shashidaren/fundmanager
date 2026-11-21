@@ -178,7 +178,9 @@ ${openReqs || '- All listed items completed! Add new ideas anytime in the Handof
 - \`data/requirements.json\` — Interactive requirements backlog synced directly into this file.
 - \`scripts/calibrate.js\` — Fetches latest US ETF & USD/MYR market data (with offline/sandbox fallback), recalibrates model weights, and updates \`handoff.md\`.
 - \`scripts/generate-handoff.js\` — Regenerates \`handoff.md\` from live JSON state and Git metadata.
-- \`server/index.js\` — Unified Express API + Vite server (\`0.0.0.0:3000\`) with calibration, profile persistence, requirements management, and one-click Git commit/push endpoints.
+- \`scripts/setup-systemd.sh\` — One-command Debian/Ubuntu \`systemd\` installer so self-hosted servers (e.g. \`root@fubd\`) survive reboots automatically and auto-pull GitHub's weekday calibrations.
+- \`scripts/server-sync.sh\` — Safe rebase + rebuild + service-restart helper run by \`/etc/cron.d/fundpilot-sync\`.
+- \`server/index.js\` — Unified Express API + Vite/static server (\`0.0.0.0:3000\`) with calibration, profile persistence, requirements management, and Git pull/push endpoints.
 - \`src/\` — React + Tailwind CSS v4 Layman Dashboard UI.
 - \`.github/workflows/self-improve.yml\` — Scheduled weekday GitHub Action that runs \`npm run calibrate\` and commits updated market snapshots + \`handoff.md\` back to Git automatically.
 
@@ -186,6 +188,9 @@ ${openReqs || '- All listed items completed! Add new ideas anytime in the Handof
 \`\`\`bash
 # Start full-stack dashboard (Express API + Vite UI on port 3000)
 npm run dev
+
+# Make a Debian/Ubuntu box survive reboots (builds dist/, installs systemd service + auto-sync cron)
+npm run setup-server
 
 # Run market-driven self-improvement calibration + update handoff.md
 npm run calibrate
@@ -196,6 +201,18 @@ npm run handoff
 # Run automated engine & API test suite
 npm test
 \`\`\`
+
+---
+
+## 7. Production Linux Server Setup (Reboot Survival via \`systemd\`)
+
+For self-hosted Debian/Ubuntu boxes (such as \`root@fubd:~/fund-adviser\`):
+- **Service Unit:** \`/etc/systemd/system/fundpilot.service\` runs \`NODE_ENV=production node server/index.js\` on port \`3000\`, starts automatically on boot (\`WantedBy=multi-user.target\`), and auto-restarts within 3 seconds if crashed (\`Restart=always\`).
+- **Auto-Pull Cron:** \`/etc/cron.d/fundpilot-sync\` runs \`scripts/server-sync.sh\` every weekday at **9:15 AM MYT** (\`15 1 * * 1-5\` UTC)—15 minutes after GitHub Actions finishes its 9:00 AM MYT calibration—pulling fresh market data and rebuilding/restarting only when code changes.
+- **Useful Server Commands:**
+  - \`systemctl status fundpilot\` — Check live status
+  - \`journalctl -u fundpilot -f\` — Tail live logs
+  - \`systemctl restart fundpilot\` — Restart manually
 `;
 }
 

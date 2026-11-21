@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { generateRecommendation, rankUniverse } from '../shared/engine.js';
 import { runCalibration } from '../scripts/calibrate.js';
 import { writeHandoffFile } from '../scripts/generate-handoff.js';
-import { getGitStatusSummary, syncToGit } from './gitSync.js';
+import { getGitStatusSummary, pullFromGit, syncToGit } from './gitSync.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.resolve(__dirname, '..');
@@ -181,6 +181,18 @@ export async function createServer() {
       const syncResult = syncToGit(message || '');
       res.json({
         syncResult,
+        ...buildAppPayload()
+      });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  app.post('/api/git/pull', (_req, res) => {
+    try {
+      const pullResult = pullFromGit();
+      res.json({
+        pullResult,
         ...buildAppPayload()
       });
     } catch (err) {

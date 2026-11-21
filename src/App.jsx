@@ -167,6 +167,22 @@ export default function App() {
     }
   };
 
+  const handlePullGit = async () => {
+    setIsSyncingGit(true);
+    try {
+      const res = await fetch('/api/git/pull', { method: 'POST' });
+      const payload = await res.json();
+      if (!res.ok) throw new Error(payload.error || 'Git pull failed');
+      setAppData(payload);
+      setDraftProfile(payload.modelState.activeInvestorProfile);
+      showToast(payload.pullResult?.note || 'Pulled latest updates from Git!');
+    } catch (err) {
+      showToast(err.message, 'error');
+    } finally {
+      setIsSyncingGit(false);
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
@@ -338,6 +354,7 @@ export default function App() {
             handoffMarkdown={appData.handoffMarkdown}
             requirements={appData.requirements}
             onSyncGit={handleSyncGit}
+            onPullGit={handlePullGit}
             isSyncingGit={isSyncingGit}
             onMutateRequirement={handleMutateRequirement}
           />

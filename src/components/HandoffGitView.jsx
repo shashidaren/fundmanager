@@ -3,6 +3,7 @@ import {
   GitBranch,
   GitCommit,
   UploadCloud,
+  DownloadCloud,
   FileText,
   Copy,
   Check,
@@ -17,6 +18,7 @@ export default function HandoffGitView({
   handoffMarkdown,
   requirements,
   onSyncGit,
+  onPullGit,
   isSyncingGit,
   onMutateRequirement
 }) {
@@ -115,18 +117,29 @@ export default function HandoffGitView({
               placeholder="e.g. chore: update my Versa + VOO monthly plan & roadmap"
               className="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-teal-600"
             />
-            <button
-              type="button"
-              disabled={isSyncingGit}
-              onClick={async () => {
-                await onSyncGit(commitMsg);
-                setCommitMsg('');
-              }}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold cursor-pointer disabled:opacity-60"
-            >
-              <UploadCloud className="w-4 h-4" />
-              {isSyncingGit ? 'Syncing & Pushing to Git...' : 'Refresh handoff.md + Commit & Push to Git'}
-            </button>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <button
+                type="button"
+                disabled={isSyncingGit}
+                onClick={async () => {
+                  await onSyncGit(commitMsg);
+                  setCommitMsg('');
+                }}
+                className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold cursor-pointer disabled:opacity-60"
+              >
+                <UploadCloud className="w-4 h-4" />
+                {isSyncingGit ? 'Syncing...' : 'Commit & Push to Git'}
+              </button>
+              <button
+                type="button"
+                disabled={isSyncingGit}
+                onClick={onPullGit}
+                className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-teal-50 hover:bg-teal-100 text-teal-900 border border-teal-300 text-xs font-semibold cursor-pointer disabled:opacity-60"
+              >
+                <DownloadCloud className="w-4 h-4" />
+                Pull Latest from Git
+              </button>
+            </div>
           </div>
 
           {/* Recent Commits */}

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-21T08:00:00.000Z",
+  "lastUpdated": "2026-11-21T13:20:00.000Z",
   "items": [
     {
       "id": "req-01",
@@ -35,6 +35,13 @@
       "category": "Documentation & Sync",
       "status": "implemented",
       "notes": "All architecture, active plan summaries, fund metrics, calibration logs, and open requirements stay updated in handoff.md and synced to Git."
+    },
+    {
+      "id": "req-09",
+      "title": "Linux Box Reboot Survival (systemd) & Weekday Auto-Pull Sync",
+      "category": "Infrastructure & Ops",
+      "status": "implemented",
+      "notes": "One-command scripts/setup-systemd.sh installs /etc/systemd/system/fundpilot.service (starts on boot, auto-restarts on crash) plus /etc/cron.d/fundpilot-sync."
     },
     {
       "id": "req-06",
