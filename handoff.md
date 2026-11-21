@@ -2,8 +2,8 @@
 
 > **Auto-Generated Living Source of Truth** — Updated automatically whenever the self-improving calibration engine runs, investor preferences or requirements change, or Git sync executes.
 >
-> - **Last Synced (UTC):** `2026-11-21T07:54:26.304Z`
-> - **Active Git Branch:** `arena/6c730325-fundmanager` (Base/Latest Commit: `2cdf986`)
+> - **Last Synced (UTC):** `2026-11-21T07:54:45.089Z`
+> - **Active Git Branch:** `arena/6c730325-fundmanager` (Base/Latest Commit: `528c1ff`)
 > - **Model Version:** `v1.1.0` (Calibration Cycle `#2`)
 > - **Market Regime:** `HIGH_RATE_DEFENSIVE` · **Reference FX:** `1 USD = RM 4.42`
 
