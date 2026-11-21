@@ -18,12 +18,16 @@ function writeJson(relPath, data) {
   fs.writeFileSync(path.join(ROOT_DIR, relPath), JSON.stringify(data, null, 2) + '\n', 'utf8');
 }
 
-function buildAppPayload() {
+function buildAppPayload({ refreshHandoff = false } = {}) {
   const fundsData = readJson('data/funds.json');
   const modelState = readJson('data/model-state.json');
   const calibrationHistory = readJson('data/calibration-history.json');
   const requirements = readJson('data/requirements.json');
-  const handoffRes = writeHandoffFile();
+  const handoffPath = path.join(ROOT_DIR, 'handoff.md');
+  const handoffMarkdown =
+    refreshHandoff || !fs.existsSync(handoffPath)
+      ? writeHandoffFile().content
+      : fs.readFileSync(handoffPath, 'utf8');
   const profile = modelState.activeInvestorProfile || {};
   const recommendation = generateRecommendation(profile, fundsData, modelState);
   const rankedFunds = rankUniverse(fundsData.funds, modelState, false);
@@ -36,7 +40,7 @@ function buildAppPayload() {
     requirements,
     recommendation,
     rankedFunds,
-    handoffMarkdown: handoffRes.content,
+    handoffMarkdown,
     gitStatus
   };
 }
@@ -78,7 +82,7 @@ export async function createServer() {
         projectionYears: Math.min(25, Math.max(1, Number(incoming.projectionYears ?? modelState.activeInvestorProfile.projectionYears ?? 10)))
       };
       writeJson('data/model-state.json', modelState);
-      res.json(buildAppPayload());
+      res.json(buildAppPayload({ refreshHandoff: true }));
     } catch (err) {
       res.status(500).json({ error: err.message });
     }
@@ -128,7 +132,7 @@ export async function createServer() {
 
       fundsData.lastUpdated = new Date().toISOString();
       writeJson('data/funds.json', fundsData);
-      res.json(buildAppPayload());
+      res.json(buildAppPayload({ refreshHandoff: true }));
     } catch (err) {
       res.status(500).json({ error: err.message });
     }
@@ -159,7 +163,7 @@ export async function createServer() {
 
       reqData.lastUpdated = new Date().toISOString();
       writeJson('data/requirements.json', reqData);
-      res.json(buildAppPayload());
+      res.json(buildAppPayload({ refreshHandoff: true }));
     } catch (err) {
       res.status(500).json({ error: err.message });
     }

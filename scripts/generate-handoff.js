@@ -35,6 +35,12 @@ export function buildHandoffMarkdown() {
   const git = safeGitInfo();
 
   const profile = modelState.activeInvestorProfile || {};
+  const stateTimestamps = [
+    modelState.lastCalibratedAt,
+    fundsData.lastUpdated,
+    reqData.lastUpdated
+  ].filter(Boolean).sort();
+  const latestStateTimestamp = stateTimestamps[stateTimestamps.length - 1] || '2026-11-21T08:00:00.000Z';
   const rec = generateRecommendation(profile, fundsData, modelState);
   const rankedAll = rankUniverse(fundsData.funds, modelState, false);
   const endProj = rec.projections[rec.projections.length - 1] || {};
@@ -75,8 +81,8 @@ export function buildHandoffMarkdown() {
 
 > **Auto-Generated Living Source of Truth** — Updated automatically whenever the self-improving calibration engine runs, investor preferences or requirements change, or Git sync executes.
 >
-> - **Last Synced (UTC):** \`${new Date().toISOString()}\`
-> - **Active Git Branch:** \`${git.branch}\` (Base/Latest Commit: \`${git.commit}\`)
+> - **Last State Sync (UTC):** \`${latestStateTimestamp}\`
+> - **Active Git Branch:** \`${git.branch}\`
 > - **Model Version:** \`v${modelState.version}\` (Calibration Cycle \`#${modelState.calibrationCycle}\`)
 > - **Market Regime:** \`${modelState.marketRegime}\` · **Reference FX:** \`1 USD = RM ${Number(modelState.fxUsdMyr).toFixed(2)}\`
 
