@@ -1,0 +1,30 @@
+{
+  "version": "1.1.0",
+  "calibrationCycle": 2,
+  "lastCalibratedAt": "2026-11-21T07:54:26.294Z",
+  "dataSource": "verified-baseline-dataset",
+  "fxUsdMyr": 4.42,
+  "marketRegime": "HIGH_RATE_DEFENSIVE",
+  "regimeSummary": "Global stock indexes show healthy long-term compounding potential while Ringgit & USD money-market yields (~3.6%–4.3%) pay solid returns on your safety buffer.",
+  "weights": {
+    "feeEfficiency": 0.29,
+    "riskAdjustedReturn": 0.27,
+    "drawdownProtection": 0.22,
+    "diversificationBreadth": 0.14,
+    "yieldCarry": 0.08
+  },
+  "tiltAdjustments": {
+    "myrSafetyFloorBoost": 0,
+    "highGrowthCapPct": 20,
+    "userComfortBias": 0
+  },
+  "activeInvestorProfile": {
+    "initialAmountMyr": 5000,
+    "monthlyContributionMyr": 800,
+    "horizon": "medium_long",
+    "emergencyBuffer": "partial",
+    "dipComfort": "moderate",
+    "shariahOnly": false,
+    "projectionYears": 10
+  }
+}

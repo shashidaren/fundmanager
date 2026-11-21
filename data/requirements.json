@@ -1,0 +1,61 @@
+{
+  "lastUpdated": "2026-11-21T08:00:00.000Z",
+  "items": [
+    {
+      "id": "req-01",
+      "title": "Guided Layman Recommendation Engine (MYR + USD Auto-Split)",
+      "category": "Core Recommendation",
+      "status": "implemented",
+      "notes": "Plain-English planner translating RM budget, timeline, emergency savings, and dip comfort into exact Versa (MYR) + US ETF (USD) allocations."
+    },
+    {
+      "id": "req-02",
+      "title": "Non-Individual Stock Universe (Versa Portfolios + Broad US ETFs)",
+      "category": "Fund Universe",
+      "status": "implemented",
+      "notes": "Includes 9 Versa funds and 9 broad US ETFs (VOO, VTI, VT, QQQM, SCHD, SGOV, SPUS, HLAL, SPSK) with zero single-stock picking risk."
+    },
+    {
+      "id": "req-03",
+      "title": "All Funds + Instant Shariah-Only (-i / Halal) Toggle",
+      "category": "Filter & Compliance",
+      "status": "implemented",
+      "notes": "Global one-click toggle switches recommendations and explorer seamlessly between full universe and 100% Shariah-compliant options."
+    },
+    {
+      "id": "req-04",
+      "title": "Market-Driven Self-Improving Calibration + GitHub Actions",
+      "category": "Self-Improving & Git",
+      "status": "implemented",
+      "notes": "Scheduled GitHub Action (.github/workflows/self-improve.yml) and in-app calibration engine evaluate market returns/drawdowns, adjust scoring weights safely, update handoff.md, and commit to Git."
+    },
+    {
+      "id": "req-05",
+      "title": "Automatic handoff.md Reference & Continuous Git Sync",
+      "category": "Documentation & Sync",
+      "status": "implemented",
+      "notes": "All architecture, active plan summaries, fund metrics, calibration logs, and open requirements stay updated in handoff.md and synced to Git."
+    },
+    {
+      "id": "req-06",
+      "title": "Actual Holdings Tracker & Monthly Rebalancing Alert",
+      "category": "Future Iteration",
+      "status": "planned",
+      "notes": "Allow logging actual units/RM invested each month in Versa & US broker to show drift vs target % and suggest exact next payday top-up."
+    },
+    {
+      "id": "req-07",
+      "title": "Broker & FX Cost Comparison Helper (IBKR / Moomoo MY / Rakuten / FSMOne)",
+      "category": "Future Iteration",
+      "status": "planned",
+      "notes": "Help beginners pick the cheapest MY-regulated or international broker based on monthly DCA size (e.g. RM300/mo vs RM2,000/mo)."
+    },
+    {
+      "id": "req-08",
+      "title": "EPF / ASB / PRS Integration Toggle",
+      "category": "Future Iteration",
+      "status": "planned",
+      "notes": "Account for existing EPF or ASB balances as part of the investor's safe Ringgit base so US ETF / Versa Growth weights adjust holistically."
+    }
+  ]
+}

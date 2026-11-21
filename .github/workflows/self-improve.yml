@@ -1,0 +1,51 @@
+name: Market-Driven Self-Improving Calibration & Handoff Sync
+
+on:
+  schedule:
+    # Runs Monday–Friday at 01:00 UTC (09:00 AM Malaysia Time)
+    - cron: '0 1 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Optional note for manual calibration trigger'
+        required: false
+        default: 'manual-github-dispatch'
+
+permissions:
+  contents: write
+
+jobs:
+  calibrate-and-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run engine & calibration test suite
+        run: npm test
+
+      - name: Fetch market data, recalibrate weights & update handoff.md
+        run: npm run calibrate
+
+      - name: Commit and push updated model state & handoff.md
+        run: |
+          git config user.name "FundPilot Auto-Calibrator"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/ handoff.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(calibrate): auto-update market metrics, weights & handoff.md"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
