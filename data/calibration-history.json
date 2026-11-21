@@ -1,0 +1,49 @@
+{
+  "runs": [
+    {
+      "id": "cal-001",
+      "cycle": 1,
+      "timestamp": "2026-11-21T08:00:00.000Z",
+      "trigger": "initial-baseline",
+      "dataSource": "verified-baseline-dataset",
+      "marketRegime": "BALANCED_NORMAL",
+      "fxUsdMyr": 4.42,
+      "portfolioEfficiencyScore": 88.4,
+      "laymanComfortCompliancePct": 100,
+      "weightSnapshot": {
+        "feeEfficiency": 0.28,
+        "riskAdjustedReturn": 0.27,
+        "drawdownProtection": 0.22,
+        "diversificationBreadth": 0.14,
+        "yieldCarry": 0.09
+      },
+      "changesPlainEnglish": [
+        "Initialized scoring weights balancing low ETF fees (28%), risk-adjusted return efficiency (27%), and temporary drop protection (22%).",
+        "Set high-growth tilt ceiling (QQQM / HLAL) to 20% so layman portfolios avoid excessive tech-concentration swings.",
+        "Verified 100% of recommended Versa + US ETF sleeves stay within each layman profile's stated temporary dip comfort threshold."
+      ]
+    },
+    {
+      "id": "cal-002",
+      "cycle": 2,
+      "timestamp": "2026-11-21T07:54:26.294Z",
+      "trigger": "cli-auto-calibrate",
+      "dataSource": "verified-baseline-dataset",
+      "marketRegime": "HIGH_RATE_DEFENSIVE",
+      "fxUsdMyr": 4.42,
+      "portfolioEfficiencyScore": 92.8,
+      "laymanComfortCompliancePct": 100,
+      "weightSnapshot": {
+        "feeEfficiency": 0.29,
+        "riskAdjustedReturn": 0.27,
+        "drawdownProtection": 0.22,
+        "diversificationBreadth": 0.14,
+        "yieldCarry": 0.08
+      },
+      "changesPlainEnglish": [
+        "Fee spread check (Versa equity avg 1.12% vs US ETFs avg 0.21%): reinforced Fee Efficiency weight so multi-year plans minimize fee drag.",
+        "Post-calibration audit: 100% layman comfort compliance across all 4 investor archetypes (Portfolio Efficiency Score: 92.8/100)."
+      ]
+    }
+  ]
+}
