@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import http from 'node:http';
 import path from 'node:path';
 import express from 'express';
 import { fileURLToPath } from 'node:url';
@@ -47,6 +48,7 @@ function buildAppPayload({ refreshHandoff = false } = {}) {
 
 export async function createServer() {
   const app = express();
+  const httpServer = http.createServer(app);
   app.use(express.json({ limit: '1mb' }));
 
   app.get('/api/health', (_req, res) => {
@@ -191,7 +193,7 @@ export async function createServer() {
     const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
       root: ROOT_DIR,
-      server: { middlewareMode: true, allowedHosts: true },
+      server: { middlewareMode: true, allowedHosts: true, hmr: { server: httpServer } },
       appType: 'spa'
     });
     app.use(vite.middlewares);
@@ -203,14 +205,14 @@ export async function createServer() {
     });
   }
 
-  return app;
+  return { app, httpServer };
 }
 
 const isDirectRun = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 if (isDirectRun) {
   const port = Number(process.env.PORT || 3000);
-  createServer().then((app) => {
-    app.listen(port, '0.0.0.0', () => {
+  createServer().then(({ httpServer }) => {
+    httpServer.listen(port, '0.0.0.0', () => {
       console.log(`FundPilot MY server listening on http://0.0.0.0:${port}`);
     });
   });
