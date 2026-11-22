@@ -1,17 +1,17 @@
 {
   "version": "1.1.0",
-  "calibrationCycle": 3,
-  "lastCalibratedAt": "2026-11-21T13:28:53.038Z",
+  "calibrationCycle": 4,
+  "lastCalibratedAt": "2026-11-22T16:43:41.262Z",
   "dataSource": "live-yahoo-finance (9 ETFs)",
   "fxUsdMyr": 4.11,
   "marketRegime": "BALANCED_NORMAL",
   "regimeSummary": "Global stock indexes show healthy long-term compounding potential while Ringgit & USD money-market yields (~3.6%–4.3%) pay solid returns on your safety buffer.",
   "weights": {
-    "feeEfficiency": 0.3,
+    "feeEfficiency": 0.31,
     "riskAdjustedReturn": 0.27,
     "drawdownProtection": 0.22,
     "diversificationBreadth": 0.14,
-    "yieldCarry": 0.07
+    "yieldCarry": 0.06
   },
   "tiltAdjustments": {
     "myrSafetyFloorBoost": 0,
@@ -19,11 +19,11 @@
     "userComfortBias": 0
   },
   "activeInvestorProfile": {
-    "initialAmountMyr": 5000,
-    "monthlyContributionMyr": 800,
-    "horizon": "medium_long",
-    "emergencyBuffer": "partial",
-    "dipComfort": "moderate",
+    "initialAmountMyr": 3000,
+    "monthlyContributionMyr": 500,
+    "horizon": "near",
+    "emergencyBuffer": "none",
+    "dipComfort": "ultra_calm",
     "shariahOnly": false,
     "projectionYears": 10
   }

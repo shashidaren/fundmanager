@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-21T13:20:00.000Z",
+  "lastUpdated": "2026-11-21T16:33:23.206Z",
   "items": [
     {
       "id": "req-01",
@@ -19,7 +19,7 @@
       "id": "req-03",
       "title": "All Funds + Instant Shariah-Only (-i / Halal) Toggle",
       "category": "Filter & Compliance",
-      "status": "implemented",
+      "status": "planned",
       "notes": "Global one-click toggle switches recommendations and explorer seamlessly between full universe and 100% Shariah-compliant options."
     },
     {
