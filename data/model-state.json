@@ -1,9 +1,9 @@
 {
   "version": "1.1.0",
-  "calibrationCycle": 4,
-  "lastCalibratedAt": "2026-11-22T16:43:41.262Z",
+  "calibrationCycle": 5,
+  "lastCalibratedAt": "2026-11-23T08:42:36.995Z",
   "dataSource": "live-yahoo-finance (9 ETFs)",
-  "fxUsdMyr": 4.11,
+  "fxUsdMyr": 4.12,
   "marketRegime": "BALANCED_NORMAL",
   "regimeSummary": "Global stock indexes show healthy long-term compounding potential while Ringgit & USD money-market yields (~3.6%–4.3%) pay solid returns on your safety buffer.",
   "weights": {
