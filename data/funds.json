@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-11-24T10:44:40.344Z",
-  "fxUsdMyr": 4.11,
+  "lastUpdated": "2026-11-25T09:40:33.006Z",
+  "fxUsdMyr": 4.12,
   "dataSourceNote": "Curated baseline reference snapshot (Versa Malaysia fund sheets & US ETF index data); auto-updated on schedule via GitHub Actions calibration.",
   "funds": [
     {
@@ -387,10 +387,10 @@
       "holdingsCount": "500 US blue-chip companies",
       "minInvestmentMyr": 150,
       "expenseRatio": 0.03,
-      "expectedReturn": 7.17,
-      "return1Y": 6.78,
+      "expectedReturn": 7.03,
+      "return1Y": 6.27,
       "return3Y": 12.6,
-      "volatility": 16.95,
+      "volatility": 14.62,
       "maxDrawdown": -24.5,
       "dividendYield": 1.28,
       "liquidity": "Instant market hours · Fractional shares supported on MY-friendly brokers",
@@ -409,8 +409,8 @@
         2.66,
         -0.32,
         -0.86,
-        -8.53,
-        4.46
+        -4.91,
+        0
       ]
     },
     {
@@ -428,10 +428,10 @@
       "holdingsCount": "3,600+ US companies",
       "minInvestmentMyr": 150,
       "expenseRatio": 0.03,
-      "expectedReturn": 7.1,
-      "return1Y": 6.87,
+      "expectedReturn": 7,
+      "return1Y": 6.44,
       "return3Y": 12.1,
-      "volatility": 16.79,
+      "volatility": 14.4,
       "maxDrawdown": -25.4,
       "dividendYield": 1.35,
       "liquidity": "Instant market hours · Fractional shares available",
@@ -450,8 +450,8 @@
         2.7,
         -0.78,
         -0.71,
-        -8.49,
-        4.49
+        -4.77,
+        0
       ]
     },
     {
@@ -469,10 +469,10 @@
       "holdingsCount": "9,500+ companies across 45+ countries",
       "minInvestmentMyr": 150,
       "expenseRatio": 0.06,
-      "expectedReturn": 6.32,
-      "return1Y": 5.97,
+      "expectedReturn": 6.2,
+      "return1Y": 5.5,
       "return3Y": 10.8,
-      "volatility": 16.85,
+      "volatility": 14.57,
       "maxDrawdown": -25.1,
       "dividendYield": 1.85,
       "liquidity": "Instant market hours · Fractional shares available",
@@ -491,8 +491,8 @@
         3.01,
         -1.43,
         -1.6,
-        -8.53,
-        4.31
+        -5,
+        0
       ]
     },
     {
@@ -510,10 +510,10 @@
       "holdingsCount": "100 leading innovation & consumer companies",
       "minInvestmentMyr": 150,
       "expenseRatio": 0.15,
-      "expectedReturn": 7.16,
-      "return1Y": 6.33,
+      "expectedReturn": 6.73,
+      "return1Y": 4.27,
       "return3Y": 15.8,
-      "volatility": 27.15,
+      "volatility": 24.65,
       "maxDrawdown": -32.6,
       "dividendYield": 0.6,
       "liquidity": "Instant market hours · Fractional shares available",
@@ -532,8 +532,8 @@
         4.2,
         3.31,
         -6.66,
-        -11.64,
-        6.66
+        -7.58,
+        0
       ]
     },
     {
@@ -551,10 +551,10 @@
       "holdingsCount": "100 cash-generative US businesses",
       "minInvestmentMyr": 150,
       "expenseRatio": 0.06,
-      "expectedReturn": 14.31,
-      "return1Y": 28.46,
+      "expectedReturn": 15.16,
+      "return1Y": 30.33,
       "return3Y": 9.8,
-      "volatility": 18.2,
+      "volatility": 17.34,
       "maxDrawdown": -18.5,
       "dividendYield": 3.45,
       "liquidity": "Instant market hours · Fractional shares available",
@@ -573,8 +573,8 @@
         4.24,
         -6.02,
         9.99,
-        -5.14,
-        1.33
+        -2.49,
+        0
       ]
     },
     {
@@ -592,8 +592,8 @@
       "holdingsCount": "40+ US Government T-Bills",
       "minInvestmentMyr": 150,
       "expenseRatio": 0.09,
-      "expectedReturn": 3.82,
-      "return1Y": 3.31,
+      "expectedReturn": 3.75,
+      "return1Y": 3.33,
       "return3Y": 4.75,
       "volatility": 0.31,
       "maxDrawdown": -0.15,
@@ -614,7 +614,7 @@
         0.29,
         0.3,
         0.35,
-        0.24,
+        0.26,
         0
       ]
     },
@@ -633,10 +633,10 @@
       "holdingsCount": "200+ Shariah-compliant US blue-chips",
       "minInvestmentMyr": 150,
       "expenseRatio": 0.45,
-      "expectedReturn": 7.31,
-      "return1Y": 7.77,
+      "expectedReturn": 7.21,
+      "return1Y": 6.62,
       "return3Y": 13.8,
-      "volatility": 22.01,
+      "volatility": 18.86,
       "maxDrawdown": -26.2,
       "dividendYield": 0.8,
       "liquidity": "Instant market hours · Fractional shares available",
@@ -655,8 +655,8 @@
         4.5,
         1.23,
         -1.84,
-        -11.64,
-        6.12
+        -7.23,
+        0
       ]
     },
     {
@@ -674,10 +674,10 @@
       "holdingsCount": "230+ Shariah-compliant US companies",
       "minInvestmentMyr": 150,
       "expenseRatio": 0.5,
-      "expectedReturn": 7.2,
-      "return1Y": 8.32,
+      "expectedReturn": 7.15,
+      "return1Y": 6.86,
       "return3Y": 12.9,
-      "volatility": 23.77,
+      "volatility": 20.71,
       "maxDrawdown": -25,
       "dividendYield": 0.85,
       "liquidity": "Instant market hours · Fractional shares available",
@@ -696,8 +696,8 @@
         3.93,
         3.11,
         -4.4,
-        -12,
-        6.45
+        -7.58,
+        0
       ]
     },
     {
@@ -715,10 +715,10 @@
       "holdingsCount": "75+ global investment-grade Sukuk",
       "minInvestmentMyr": 150,
       "expenseRatio": 0.55,
-      "expectedReturn": 1.49,
-      "return1Y": -1.54,
+      "expectedReturn": 1.05,
+      "return1Y": -1.47,
       "return3Y": 4.15,
-      "volatility": 4.29,
+      "volatility": 4.24,
       "maxDrawdown": -9.8,
       "dividendYield": 4.1,
       "liquidity": "Instant market hours",
@@ -737,8 +737,8 @@
         0.66,
         -2.62,
         1.28,
-        -0.68,
-        0.23
+        -0.39,
+        0
       ]
     }
   ]
