@@ -154,6 +154,28 @@
         "Balanced market regime confirmed (avg equity vol 16.2%, cash yield 3.65%): fine-tuned adaptive weights within optimal steady-state band.",
         "Post-calibration audit: 100% layman comfort compliance across all 4 investor archetypes (Portfolio Efficiency Score: 86.9/100)."
       ]
+    },
+    {
+      "id": "cal-008",
+      "cycle": 8,
+      "timestamp": "2026-11-26T09:16:17.297Z",
+      "trigger": "cli-auto-calibrate",
+      "dataSource": "live-yahoo-finance (9 ETFs)",
+      "marketRegime": "BALANCED_NORMAL",
+      "fxUsdMyr": 4.11,
+      "portfolioEfficiencyScore": 86.5,
+      "laymanComfortCompliancePct": 100,
+      "weightSnapshot": {
+        "feeEfficiency": 0.31,
+        "riskAdjustedReturn": 0.27,
+        "drawdownProtection": 0.22,
+        "diversificationBreadth": 0.14,
+        "yieldCarry": 0.06
+      },
+      "changesPlainEnglish": [
+        "Balanced market regime confirmed (avg equity vol 16.3%, cash yield 3.63%): fine-tuned adaptive weights within optimal steady-state band.",
+        "Post-calibration audit: 100% layman comfort compliance across all 4 investor archetypes (Portfolio Efficiency Score: 86.5/100)."
+      ]
     }
   ]
 }

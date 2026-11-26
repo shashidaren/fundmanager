@@ -2,10 +2,10 @@
 
 > **Auto-Generated Living Source of Truth** — Updated automatically whenever the self-improving calibration engine runs, investor preferences or requirements change, or Git sync executes.
 >
-> - **Last State Sync (UTC):** `2026-11-25T09:40:33.019Z`
+> - **Last State Sync (UTC):** `2026-11-26T09:16:17.297Z`
 > - **Active Git Branch:** `main`
-> - **Model Version:** `v1.1.0` (Calibration Cycle `#7`)
-> - **Market Regime:** `BALANCED_NORMAL` · **Reference FX:** `1 USD = RM 4.12`
+> - **Model Version:** `v1.1.0` (Calibration Cycle `#8`)
+> - **Market Regime:** `BALANCED_NORMAL` · **Reference FX:** `1 USD = RM 4.11`
 
 ---
 
@@ -31,13 +31,13 @@
 
 ### Proposed Plan: **Calm Steady-Builder Plan**
 - **Split:** 85% Versa (MYR) · 15% US Broad ETFs (USD)
-- **Expected Long-Term Average Return:** **3.67% p.a.** (net of fund fees)
+- **Expected Long-Term Average Return:** **3.66% p.a.** (net of fund fees)
 - **Total Ongoing Fund Fee:** **0.27% p.a.** (~RM 2.69 per year per RM 1,000 invested)
 - **Estimated Worst Rough-Year Dip:** **-0.1%** (RM 10,000 temporarily dipping to ~RM 9,990 before recovery)
 - **10-Year Projected Value:**
   - Total Cash Contributed: **RM 63,000**
-  - Expected Path Value: **RM 76,686**
-  - Cautious Market Path: **RM 71,820**
+  - Expected Path Value: **RM 76,644**
+  - Cautious Market Path: **RM 71,781**
 
 ### Recommended Fund Breakdown
 
@@ -70,6 +70,10 @@ The engine evaluates market returns, volatility, drawdowns, and fee drag across 
 - **Learned User Comfort Bias:** `0`
 
 ### Latest Calibration Changelog
+- **Cycle #8** (2026-11-26T09:16:17.297Z · `cli-auto-calibrate` · Source: `live-yahoo-finance (9 ETFs)` · Regime: `BALANCED_NORMAL` · Score: **86.5/100**)
+  - Balanced market regime confirmed (avg equity vol 16.3%, cash yield 3.63%): fine-tuned adaptive weights within optimal steady-state band.
+  - Post-calibration audit: 100% layman comfort compliance across all 4 investor archetypes (Portfolio Efficiency Score: 86.5/100).
+
 - **Cycle #7** (2026-11-25T09:40:33.019Z · `cli-auto-calibrate` · Source: `live-yahoo-finance (9 ETFs)` · Regime: `BALANCED_NORMAL` · Score: **86.9/100**)
   - Balanced market regime confirmed (avg equity vol 16.2%, cash yield 3.65%): fine-tuned adaptive weights within optimal steady-state band.
   - Post-calibration audit: 100% layman comfort compliance across all 4 investor archetypes (Portfolio Efficiency Score: 86.9/100).
@@ -86,30 +90,26 @@ The engine evaluates market returns, volatility, drawdowns, and fee drag across 
   - Fee spread check (Versa equity avg 1.12% vs US ETFs avg 0.21%): reinforced Fee Efficiency weight so multi-year plans minimize fee drag.
   - Post-calibration audit: 100% layman comfort compliance across all 4 investor archetypes (Portfolio Efficiency Score: 87.7/100).
 
-- **Cycle #3** (2026-11-21T13:28:53.038Z · `dashboard-auto-calibrate` · Source: `live-yahoo-finance (9 ETFs)` · Regime: `BALANCED_NORMAL` · Score: **89.1/100**)
-  - Fee spread check (Versa equity avg 1.12% vs US ETFs avg 0.21%): reinforced Fee Efficiency weight so multi-year plans minimize fee drag.
-  - Post-calibration audit: 100% layman comfort compliance across all 4 investor archetypes (Portfolio Efficiency Score: 89.1/100).
-
 ---
 
 ## 4. Complete Fund Universe (Ranked by Current Model Score)
 
 | Ticker | Fund Name | Platform | Shariah | Fee | Est. Return | Max Dip | Model Score |
 | :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| `SGOV` | iShares 0-3 Month Treasury Bond ETF | US ETF (USD) | No | 0.09% | 3.75% | -0.1% | **92.1** |
+| `SGOV` | iShares 0-3 Month Treasury Bond ETF | US ETF (USD) | No | 0.09% | 3.69% | -0.1% | **91.6** |
 | `VERSA-CASH` | Versa Cash | Versa (MYR) | No | 0.30% | 3.65% | -0.1% | **87.3** |
 | `VERSA-CASH-I` | Versa Cash-i | Versa (MYR) | Yes | 0.30% | 3.55% | -0.1% | **86.3** |
-| `SCHD` | Schwab U.S. Dividend Equity ETF | US ETF (USD) | No | 0.06% | 15.16% | -18.5% | **82.2** |
+| `SCHD` | Schwab U.S. Dividend Equity ETF | US ETF (USD) | No | 0.06% | 15.89% | -18.5% | **83.3** |
 | `VERSA-SGD` | Versa SGD | Versa (MYR) | No | 0.45% | 4.10% | -4.2% | **78** |
-| `VTI` | Vanguard Total Stock Market ETF | US ETF (USD) | No | 0.03% | 7.00% | -25.4% | **71** |
-| `VOO` | Vanguard S&P 500 ETF | US ETF (USD) | No | 0.03% | 7.03% | -24.5% | **70.8** |
-| `VT` | Vanguard Total World Stock ETF | US ETF (USD) | No | 0.06% | 6.20% | -25.1% | **70** |
+| `VTI` | Vanguard Total Stock Market ETF | US ETF (USD) | No | 0.03% | 6.89% | -25.4% | **70.8** |
+| `VOO` | Vanguard S&P 500 ETF | US ETF (USD) | No | 0.03% | 6.87% | -24.5% | **70.5** |
+| `VT` | Vanguard Total World Stock ETF | US ETF (USD) | No | 0.06% | 6.09% | -25.1% | **69.8** |
 | `VERSA-MOD` | Versa Invest Moderate | Versa (MYR) | No | 1.05% | 5.90% | -11.5% | **66.8** |
 | `VERSA-GOLD` | Versa Gold | Versa (MYR) | Yes | 0.65% | 7.40% | -16.5% | **63** |
-| `SPUS` | SP Funds S&P 500 Sharia Industry Exclusions ETF | US ETF (USD) | Yes | 0.45% | 7.21% | -26.2% | **60** |
-| `HLAL` | Wahed FTSE USA Shariah ETF | US ETF (USD) | Yes | 0.50% | 7.15% | -25.0% | **59.4** |
-| `SPSK` | SP Funds Dow Jones Global Sukuk ETF | US ETF (USD) | Yes | 0.55% | 1.05% | -9.8% | **59.2** |
-| `QQQM` | Invesco NASDAQ 100 ETF | US ETF (USD) | No | 0.15% | 6.73% | -32.6% | **58.8** |
+| `SPUS` | SP Funds S&P 500 Sharia Industry Exclusions ETF | US ETF (USD) | Yes | 0.45% | 7.01% | -26.2% | **59.8** |
+| `HLAL` | Wahed FTSE USA Shariah ETF | US ETF (USD) | Yes | 0.50% | 7.01% | -25.0% | **59.2** |
+| `SPSK` | SP Funds Dow Jones Global Sukuk ETF | US ETF (USD) | Yes | 0.55% | 0.71% | -9.8% | **59.2** |
+| `QQQM` | Invesco NASDAQ 100 ETF | US ETF (USD) | No | 0.15% | 6.26% | -32.6% | **58.4** |
 | `VERSA-GROWTH` | Versa Invest Growth | Versa (MYR) | No | 1.20% | 8.30% | -19.8% | **57.4** |
 | `VERSA-GLOBAL-I` | Versa Global-i | Versa (MYR) | Yes | 1.20% | 8.50% | -19.2% | **55.7** |
 | `VERSA-GROWTH-I` | Versa Growth-i | Versa (MYR) | Yes | 1.25% | 8.10% | -20.4% | **53.9** |
